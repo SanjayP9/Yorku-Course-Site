@@ -1,0 +1,215 @@
+html {
+    min-height: 100%;
+}
+
+body {
+    background: gainsboro;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    line-height: 140%;
+    font-size: 105%;
+    letter-spacing: 1.1px;
+    color: black;
+}
+
+body h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 545%;
+}
+
+#sidepanel {
+    height: 100vh;
+    width: 30%;
+    margin: 0 auto;
+    padding: 1% 1% 5% 1%;
+    float: left;
+    text-align: center;
+    background: #FF3D3D;
+    box-shadow: 2px 2px 12px 1px grey;
+}
+
+.sidepanel {
+    height: 100vh;
+    width: 30%;
+    margin: 0 auto;
+    padding: 1% 1% 5% 1%;
+    float: left;
+    text-align: center;
+    background: #FF3D3D;
+    box-shadow: 2px 2px 12px 1px grey;
+}
+
+#sidepanel h1, h2 {
+    color: white;
+    margin-bottom: 0.5em;
+}
+
+#sidepanel h2 {
+    margin-bottom: 2em;
+}
+
+#sidepanel p {
+margin-bottom: 2em;
+    color: white;
+}
+
+#container {
+    float: left;
+    width: 65%;
+    margin: 0 auto;
+    padding: 1% 1% 5% 1%;
+}
+
+#content-left, content-right {
+    float: left;
+    width: 50%;
+}
+
+#content-left {
+    padding-top: 2%;
+}
+
+#content-right {
+    padding-top: 2%;
+}
+
+#content-left, content-right h1, h2{
+    color: black;
+}
+
+#content a{
+    color: black;
+}
+
+#content a:hover{
+    font-weight: bold;
+}
+
+
+input[type="text"] {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 1em;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+    border: none;
+    background-color: gainsboro;
+    color: white;
+    cursor: pointer;
+}
+
+header h2 {
+    margin-top: 0em;
+    margin-bottom: 0.5em;
+    text-align: center;
+    font-size: 1em;
+    color: dimgrey;
+    
+}
+
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.resultl {
+    min-height: 10em;
+    max-height: 10em;
+    width: 42%;
+    margin: 0.5em 0.5em;
+    padding: 1% 1% 5% 1%;
+    float: left;
+    text-align: center;
+    background: gainsboro;
+    box-shadow: 2px 2px 12px 1px grey;
+
+}
+
+.resultl:hover {
+    background-color: darkgray;
+}
+
+.resultl:focus {
+    background-color: aqua;
+}
+
+.resultr {
+    height: auto;
+    width: 45%;
+    margin: 0 auto;
+    padding: 1% 1% 5% 1%;
+    float: left;
+    text-align: center;
+    background: gainsboro;
+    box-shadow: 2px 2px 12px 1px grey;
+}
+
+.resultr h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 250%;
+}
+
+input[type=text]:hover {
+    background-color: grey;
+    border-color: black;
+}
+
+input[type=text]:focus {
+    background-color: grey;
+}
+
+
+footer {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+}
+
+
+/* The accordion styles */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 70%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+	cursor: pointer;
+}
+
+.activeaccordion, .accordion:hover {
+    background-color: #ccc;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.activeaccordion:after {
+    content: "\2212";
+}
+
+.panel {
+	display: none;
+    padding: 0 18px;
+    overflow: hidden;
+}
+
+.panel.default {
+	display: block;
+}
+#sidepanel img
+{
+	width: 60%;
+}
