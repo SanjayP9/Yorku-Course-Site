@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.openqa.selenium.WebDriver;
 import java.util.Scanner;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,6 +18,7 @@ public class Webscrape {
         logger.setLevel(Level.OFF);
         Scanner reader = new Scanner(System.in);
 
+        WebDriver chrome;
         System.out.println("GUI is mainly for debug/testing. Headless is for performance and final product.");
         System.out.println("Type 1 for Headless browser, 2 for GUI (Chrome): ");
         int response = reader.nextInt();
@@ -63,6 +65,23 @@ public class Webscrape {
                 }
                   courseInfoScraper.connectionOne();
 
+            } else if (response == 3) {
+
+                System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+                ChromeDriver driver = new ChromeDriver();   // GUI (Chrome) browser
+                driver.manage().timeouts().implicitlyWait(1500, TimeUnit.MILLISECONDS);
+
+                ACTScrape courseInfoScraper = new ACTScrape();
+                courseInfoScraper.setDriver(driver);
+                courseInfoScraper.connect();
+
+                if (response2 == 1) {
+//                    courseInfoScraper.setSession("Fall/Winter 2017-2018");
+                    courseInfoScraper.setFileLocation("src/ACT-Test1.txt");
+                } else if (response2 == 2) {
+//                    courseInfoScraper.setSession("Summer 2018");
+                    courseInfoScraper.setFileLocation("src/ACT-Test2.txt");
+                }
             }
 
             System.out.println("Scrape finished!");
