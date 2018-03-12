@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.openqa.selenium.WebDriver;
 import java.util.Scanner;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,7 +17,6 @@ public class Webscrape {
         logger.setLevel(Level.OFF);
         Scanner reader = new Scanner(System.in);
 
-        WebDriver chrome;
         System.out.println("GUI is mainly for debug/testing. Headless is for performance and final product.");
         System.out.println("Type 1 for Headless browser, 2 for GUI (Chrome): ");
         int response = reader.nextInt();
@@ -34,7 +32,8 @@ public class Webscrape {
                 ChromeDriver driver = new ChromeDriver(chromeOptions);
                 driver.manage().timeouts().implicitlyWait(1500, TimeUnit.MILLISECONDS);
 
-                HeadlessScrape courseInfoScraper = new HeadlessScrape(driver);
+                ScrapeCourse courseInfoScraper = new ScrapeCourse();
+                courseInfoScraper.setDriver(driver);
 
                 if (response2 == 1) {
                     courseInfoScraper.setSession("Fall/Winter 2017-2018");
@@ -43,7 +42,7 @@ public class Webscrape {
                     courseInfoScraper.setSession("Summer 2018");
                     courseInfoScraper.setFileLocation("src/summer2018.txt");
                 }
-                courseInfoScraper.startConnection();
+                courseInfoScraper.connectionOne();
 
             } else if (response == 2) {
 
@@ -51,7 +50,9 @@ public class Webscrape {
                 ChromeDriver driver = new ChromeDriver();   // GUI (Chrome) browser
                 driver.manage().timeouts().implicitlyWait(1500, TimeUnit.MILLISECONDS);
 
-                ScrapeCourseInfo courseInfoScraper = new ScrapeCourseInfo(driver);
+                ScrapeCourse courseInfoScraper = new ScrapeCourse();
+                
+                courseInfoScraper.setDriver(driver);
 
                 if (response2 == 1) {
                     courseInfoScraper.setSession("Fall/Winter 2017-2018");
@@ -60,7 +61,7 @@ public class Webscrape {
                     courseInfoScraper.setSession("Summer 2018");
                     courseInfoScraper.setFileLocation("src/summer2018-Test.txt");
                 }
-                courseInfoScraper.startConnection();
+                  courseInfoScraper.connectionOne();
 
             }
 
