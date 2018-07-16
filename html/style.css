@@ -85,6 +85,11 @@ margin-bottom: 2em;
     font-weight: bold;
 }
 
+limit {
+    position: relative;
+    overflow: hidden;
+}
+
 
 input[type="text"] {
     width: 90%;
@@ -111,11 +116,12 @@ header h2 {
 .card {
     border-radius: 12px;
     overflow: hidden;
+    height: auto;
 }
 
 .resultl {
-    min-height: 10em;
-    max-height: 10em;
+    min-height: 8em;
+    max-height: 8em;
     width: 42%;
     margin: 0.5em 0.5em;
     padding: 1% 1% 5% 1%;
@@ -134,13 +140,25 @@ header h2 {
     background-color: aqua;
 }
 
+.results {
+    height: 430px;
+    /* height: auto; */
+    width: 45%;
+    margin: 0 auto;
+    padding: 1% 1% 5% 1%;
+    overflow-y: auto;
+    float: left;
+    background: gainsboro;
+    box-shadow: 2px 2px 12px 1px grey;
+}
+
 .resultr {
     height: auto;
     width: 45%;
     margin: 0 auto;
+    text-align: center;
     padding: 1% 1% 5% 1%;
     float: left;
-    text-align: center;
     background: gainsboro;
     box-shadow: 2px 2px 12px 1px grey;
 }
@@ -196,8 +214,25 @@ footer {
     margin-left: 5px;
 }
 
+.button {
+    background-color: #e7e7e7; /* Green */
+    border: none;
+    color: black;
+    padding: 15px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 .activeaccordion:after {
     content: "\2212";
+}
+
+.btn-group-vertical {
+    overflow-y: auto;
 }
 
 .panel {
@@ -209,6 +244,11 @@ footer {
 .panel.default {
 	display: block;
 }
+
+#sidepanel, button {
+    float: left; display: inline;
+}
+
 #sidepanel img
 {
 	width: 60%;
